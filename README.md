@@ -11,7 +11,7 @@ Each folder below contains code and a README with additional detail:
 - [`MPD-thermodynamic`](MPD-thermodynamic/) – Parcel method applied to virtual potential temperature profiles retrieved from MPD.
 - [`DWL`](DWL/) – Doppler wind lidar vertical velocity variance method.
 - [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel-based MLH retrievals from radiosondes.
-- [`HRRR-model`](HRRR-model/) – HRRR-derived MLH estimates.
+- [`HRRR`](HRRR/) – HRRR-derived MLH estimates.
 
 ## Getting Started
 
