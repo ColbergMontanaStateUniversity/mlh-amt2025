@@ -1,0 +1,1 @@
+This folder is for storing raw radiosonde data files. Download files manually and place them here before running the script.
