@@ -16,9 +16,8 @@ Radiosonde and surface meteorological data used in this project can be downloade
 
 Place the downloaded files in the corresponding folders:
 
-radiosondes/
-radiosonde_data/   # Put all radiosonde .nc files here
-surface_data/      # Put surface data .nc files here
+- [`radiosonde_data/`](./radiosonde_data/) — Put all radiosonde `.nc` files here  
+- [`surface_data/`](./surface_data/) — Put all surface data `.nc` files here
 
 ## Running the Code
 
