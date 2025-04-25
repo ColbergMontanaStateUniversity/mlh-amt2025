@@ -23,7 +23,11 @@ thetaRef = tRef .* (1000 ./ pRef) .^ (287 / 1004);
 
 % Compute saturation vapor pressure using Tetens equation [hPa]
 tRef_C = tRef - 273.15;
-esRef = 6.112 .* exp((17.67 .* tRef_C) ./ (tRef_C + 243.5));
+if tRef_C > 0
+    esRef = 6.1078*exp((17.27 *(tRef_C)) ./((tRef_C) + 237.3));
+else
+    esRef  = 6.1078*exp((21.875*(tRef_C))  ./((tRef_C)  + 265.5));
+end
 
 % Compute actual vapor pressure using RH [hPa]
 eRef = (rhRef ./ 100) .* esRef;

@@ -31,9 +31,16 @@ pRef = interp1(SurfaceData.time/3600, SurfaceData.pressure, Radiosonde.launchTim
 % Compute potential temperature using Poisson's equation [K]
 thetaRef = tRef .* (1000 ./ pRef) .^ (287 / 1004);  % Dry potential temperature [K]
 
-% Compute water vapor pressure using the Tetens formula (valid above 0°C) [hPa]
-esRef = 6.112 .* exp((17.67 .* (tRef - 273.15)) ./ (tRef - 273.15 + 243.5));  % Saturation vapor pressure [hPa]
-eRef = (rhRef ./ 100) .* esRef;  % Actual vapor pressure [hPa]
+% Compute saturation vapor pressure using Tetens equation [hPa]
+tRef_C = tRef - 273.15;
+if tRef_C > 0
+    esRef = 6.1078*exp((17.27 *(tRef_C)) ./((tRef_C) + 237.3));
+else
+    esRef  = 6.1078*exp((21.875*(tRef_C))  ./((tRef_C)  + 265.5));
+end
+
+% Compute actual vapor pressure using RH [hPa]
+eRef = (rhRef ./ 100) .* esRef;
 
 % mixing ratio
 mixingRatio = 0.622 * eRef / (pRef - eRef);
