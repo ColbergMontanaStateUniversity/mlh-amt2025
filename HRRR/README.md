@@ -40,10 +40,11 @@ This will install all required packages, including:
 ### Step 3: Run the HRRR download script
 
 Run the Python script `download_hrrr_files.py`.  
-This will create a new folder:
+This will create new folders for each day processed.
 
 ```
 HRRR_data/YYYYMMDD/
 ```
 
-containing hourly NetCDF files from the HRRR model.
+Each folder contains hourly NetCDF files from the HRRR model.  
+**Note:** HRRR times are in **UTC**, not local time.
