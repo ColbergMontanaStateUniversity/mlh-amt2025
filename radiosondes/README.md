@@ -11,12 +11,10 @@ This repository contains MATLAB code for retrieving the mixed layer height (MLH)
 
 Radiosonde and surface meteorological data used in this project can be downloaded from the National Center for Atmospheric Research (NCAR).
 
-- Radiosonde Data:  
-  [Provide link to NCAR sounding archive, e.g., CLASS or FTP]  
+- [Radiosonde Data](https://doi.org/10.26023/WKM7-HNCF-FX0B)  
   Example filename: `NCAR_M2HATS_ISS1_RS41_v1_YYYYMMDD_HHMMSS_asc.nc`
 
-- Surface Station Data:  
-  [Provide link to 3m tower or surface meteorological data source from NCAR]  
+- [Surface Meteorology Data](https://doi.org/10.26023/30XE-MB6C-SC14)  
   Example filename: `iss2_m2hats_sfcmet_3mtower_YYYYMMDD.nc`
 
 Place the downloaded files in the corresponding folders:
@@ -63,6 +61,7 @@ Implements the bulk Richardson number method using a critical threshold of 0.25 
 ## Notes
 
 - The critical bulk Richardson number used is 0.25.
+- Only use ascending radiosondes, designated with 'asc' in filename.
 - Note that this code uses a local gravitational constant for Tonopah, Nevada, USA in `compute_mlh_bulk_ri.m`. Do not use for other datasets without changing this.
 
 ## License
