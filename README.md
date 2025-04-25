@@ -31,3 +31,11 @@ Colberg, L., Repasky, K. S., Spuler, S. M., Hayman, M., & Stillwell, R. A. (2025
 
 For questions, please contact:  
 Luke Colberg – `lukecolberg@montana.edu`
+
+## Colormap Attribution
+
+This project uses perceptually uniform scientific colormaps developed by Fabio Crameri. These colormaps are designed to accurately represent data, minimize visual distortion, and remain accessible to those with color vision deficiencies.
+
+The colormaps are distributed under the [MIT License](https://github.com/GenericMappingTools/cpt-city/blob/master/cpt/Crameri/LICENSE), and are described in the following publication:
+
+> Crameri, F., Shephard, G. E., & Heron, P. J. (2020). The misuse of colour in science communication. *Nature Communications*, 11, 5444. https://doi.org/10.1038/s41467-020-19160-7
