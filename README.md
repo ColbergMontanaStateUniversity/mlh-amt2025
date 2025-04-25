@@ -1,41 +1,22 @@
-# MLH_AMT_Paper
-Code and data processing scripts supporting the paper "Mixed Layer Height Retrievals Using MicroPulse Differential Absorption Lidar," submitted to Atmospheric Measurement Techniques. Includes retrieval algorithms for MPD-aerosol, MPD-thermodynamic, Doppler wind lidar (DWL), radiosondes, and the HRRR model.
+[![View crameri perceptually uniform scientific colormaps on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/68546-crameri-perceptually-uniform-scientific-colormaps)
 
-The study presents and compares multiple algorithms for estimating the mixed layer height (MLH) from remote sensing and model data collected during the M²HATS campaign in Tonopah, Nevada.
+![](crameri7.0.png)
 
-## Repository Structure
+# About
+A simple Matlab function for [Fabio Crameri's perceptually uniform scientific colormaps](https://www.fabiocrameri.ch/colourmaps/). 
 
-Each folder below contains code and a README with additional detail:
+# Usage 
+`crameri` without any inputs displays the options for colormaps. 
 
-- [`MPD-aerosol`](MPD-aerosol/) – Haar wavelet method for aerosol backscatter gradient-based MLH retrieval.
-- [`MPD-thermodynamic`](MPD-thermodynamic/) – Parcel method applied to virtual potential temperature profiles retrieved from MPD.
-- [`DWL`](DWL/) – Doppler wind lidar vertical velocity variance method.
-- [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel-based MLH retrievals from radiosondes.
-- [`HRRR`](HRRR/) – HRRR-derived MLH estimates.
+`crameri ColormapName` sets the colormap of the current axes. 
 
-## Getting Started
+`cmap = crameri('ColormapName')` returns a 256x3 colormap. For a visual depiction of valid colormap names, type crameri. 
 
-Each subdirectory includes:
-- Required scripts or notebooks
-- Example input/output data (if applicable)
-- Instructions for running the method
+`cmap = crameri('-ColormapName')` a minus sign preceeding any ColormapName flips the order of the colormap. 
 
-## Citation
+`cmap = crameri(...,NLevels)` specifies a number of levels in the colormap. Default value is 256. 
 
-If you use this code, please cite:
+`cmap = crameri(...,'pivot',PivotValue)` centers a diverging colormap such that white  corresponds to a given value and maximum extents are set using current caxis limits.  If no `PivotValue` is set, 0 is assumed. 
 
-Colberg, L., Repasky, K. S., Spuler, S. M., Hayman, M., & Stillwell, R. A. (2025). Mixed Layer Height Retrievals Using MicroPulse Differential Absorption Lidar. Manuscript submitted to Atmospheric Measurement Techniques.
-[DOI or preprint link here]
-
-## Contact
-
-For questions, please contact:  
-Luke Colberg – `lukecolberg@montana.edu`
-
-## Colormap Attribution
-
-This project uses perceptually uniform scientific colormaps developed by Fabio Crameri. These colormaps are designed to accurately represent data, minimize visual distortion, and remain accessible to those with color vision deficiencies.
-
-The colormaps are distributed under the [MIT License](https://github.com/GenericMappingTools/cpt-city/blob/master/cpt/Crameri/LICENSE), and are described in the following publication:
-
-> Crameri, F., Shephard, G. E., & Heron, P. J. (2020). The misuse of colour in science communication. *Nature Communications*, 11, 5444. https://doi.org/10.1038/s41467-020-19160-7
+# Citation 
+Crameri, Fabio. (2021). Scientific colour maps (7.0.1). Zenodo. [https://doi.org/10.5281/zenodo.5501399](https://doi.org/10.5281/zenodo.5501399)
