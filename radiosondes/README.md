@@ -2,6 +2,11 @@
 
 This repository contains MATLAB code for retrieving the mixed layer height (MLH) from radiosonde data using the parcel method and bulk Richardson number method.
 
+## Requirements
+
+- MATLAB (tested with R2024a)
+- No additional toolboxes required
+  
 ## Data Download
 
 Radiosonde and surface meteorological data used in this project can be downloaded from the National Center for Atmospheric Research (NCAR).
@@ -21,13 +26,13 @@ Place the downloaded files in the corresponding folders:
 
 ## Running the Code
 
-The main script is:
-diagnose_radiosonde_MLH.m
+The main script is written in MATLAB:
+diagnose_radiosonde_mlh.m
 
 This script:
 - Loads radiosonde and surface data
 - Applies multiple MLH retrieval methods
-- Plots profiles and saves the results
+- Plots profiles
 
 To run:
 1. Open the `radiosondes/` folder in MATLAB.
@@ -45,10 +50,10 @@ Loads a single radiosonde profile into a structured format from a NetCDF file.
 Loads surface station data from a 3-meter tower into a structured format.
 
 ### `compute_mlh_parcel_standard.m`
-Applies the standard Holzworth (1964)-style parcel method using virtual potential temperature.
+Applies the standard parcel method using virtual potential temperature.
 
 ### `compute_mlh_parcel_offset1K.m`
-Modified parcel method using a +1 K offset to account for uncertainty or early layer growth.
+Modified parcel method using a +1 K offset.
 
 ### `compute_mlh_bulk_ri.m`
 Implements the bulk Richardson number method using a critical threshold of 0.25 to estimate MLH.
