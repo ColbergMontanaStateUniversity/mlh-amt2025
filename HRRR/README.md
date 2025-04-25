@@ -14,6 +14,11 @@ Miniconda is recommended if you prefer a lightweight installation.
 
 To set up the Python environment:
 
+## MATLAB Setup
+
+Tested with **MATLAB R2024a**  
+No additional toolboxes are required.
+
 ### Step 1: Download the environment file
 
 Download `herbie_env_full.yml` from this repository.
@@ -30,9 +35,15 @@ This will install all required packages, including:
 - `cfgrib` for reading GRIB2 files
 - `xarray`, `pyproj`, `metpy`, and other scientific packages
 
+## Step 3. Run the python script for downloading HRRR files
 
-## MATLAB Setup
+### Step 3: Run the HRRR download script
 
-Tested with **MATLAB R2024a**  
-No additional toolboxes are required.
+Run the Python script `download_hrrr_files.py`.  
+This will create a new folder:
 
+```
+HRRR_data/YYYYMMDD/
+```
+
+containing hourly NetCDF files from the HRRR model.
