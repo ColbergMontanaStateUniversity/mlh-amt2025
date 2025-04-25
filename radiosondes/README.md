@@ -1,6 +1,6 @@
 # Radiosonde MLH Diagnostics
 
-This repository contains MATLAB code for retrieving the mixed layer height (MLH) from radiosonde data using the parcel method and bulk Richardson number method.
+This folder contains MATLAB code for retrieving the mixed layer height (MLH) from radiosonde data using the parcel method and bulk Richardson number method.
 
 ## Requirements
 
