@@ -37,7 +37,7 @@ This will install all required packages, including:
 
 ## Step 3. Run the python script for downloading HRRR files
 
-### Step 3: Run the HRRR download script
+**Note:** the lattitude, longitude, and altitude are set to the M^2HATS site
 
 Run the Python script `download_hrrr_files.py`.  
 This will create new folders for each day processed.
@@ -48,3 +48,8 @@ HRRR_data/YYYYMMDD/
 
 Each folder contains hourly NetCDF files from the HRRR model.  
 **Note:** HRRR times are in **UTC**, not local time.
+
+## Step 4. Run the matlab script to process the HRRR data
+
+**Note:** 'load_hrrr_data' has a time zone shift of UTC -7, which is spcific to PDT, local time for Tonopah, Nevada during the M^2HATS experiment
+**Note:** 'concatenate_hrrr_data' has an elevation input, which is set to the M^2HATS site
