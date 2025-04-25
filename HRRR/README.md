@@ -1,6 +1,6 @@
 ## Requirements
 
-This project uses both **Python** and **MATLAB**:
+This section of the project uses both **Python** and **MATLAB**:
 
 - Python is required to download HRRR model data using the Herbie library.
 - MATLAB is used for processing the HRRR data and performing operations on the data.
