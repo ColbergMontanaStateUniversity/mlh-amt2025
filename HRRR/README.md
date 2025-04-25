@@ -57,3 +57,15 @@ Each folder contains hourly NetCDF files from the HRRR model.
 Run the main script 'diagnose_mlh_hrrr' and set Path.date1 to the YYYYMMDD of the desired day and Path.date2 to the next day 
 
 ## Function Descriptions
+
+### `compute_mlh_parcel_hrrr_offset1K.m`
+
+### `compute_mlh_parcel_hrrr_standard.m`
+
+### `concatenate_hrrr_data.m`
+
+### `convert_pressure_to_altitude.m`
+
+### `diagnose_mlh_hrrr.m`
+
+### `load_hrrr_data.m`
