@@ -1,0 +1,1 @@
+This is a placeholder file. Put your flux tower netCDF files in this folder.
