@@ -35,12 +35,16 @@ This will install all required packages, including:
 - `numpy` for numerical operations
 - `cftime` for time handling in climate data
 
-### Step 3. Download the DWL data
+### Step 3. Download the data
 
 The DWL data is available here: https://doi.org/10.26023/R75F-FGJ8-VG12
 
 Download the data. There will be 24 hourly files per day. naming convention: `Stare_122_YYYYMMDD_hh_.hpl
 These files will be in folders labeled 'pwd/YYYYMM/YYYYMMDD'
+
+The surface weather station data is available here: https://doi.org/10.26023/30XE-MB6C-SC14
+
+Download the data. There will be one 
 
 ### Step 4. Run the python DWL decoding script
 
@@ -49,10 +53,19 @@ make sure that 'halo_dl_decode.py' is in the same directory as the YYYYMM folder
 
 This code will convert the .hpl files into netCDF files in the same folders named: 'fp_YYYYMMDD_hhmmss.nc'
 
-### Step 5. Run the MATLAB processing code
+### Step 5. Run the MATLAB DWL processing code
 
 The script 'process_halo_netCDF' code will convert the 24 netCDF files into a .mat file containing the wind and backscatter data integrated to 30 meters and 10 s
 
+### Step 6. Run the MATLAB surface weather station processing code
+
+### Step 7. Run the MATLAB ISFS processing code
+
+### Step 8. Run the MATLAB cloud extraction code
+
+### Step 9. Run the MATLAB temporal variance extraction code
+
+### Step 10. Run the MATLAB MLH code
 
 
 
