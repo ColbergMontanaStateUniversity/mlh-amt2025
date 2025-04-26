@@ -49,6 +49,22 @@ make sure that 'halo_dl_decode.py' is in the same directory as the YYYYMM folder
 
 This code will convert the .hpl files into netCDF files in the same folders named: 'fp_YYYYMMDD_hhmmss.nc'
 
-### Step 5. Run the MATLAB condensing code
+### Step 5. Run the MATLAB processing code
 
-This code will convert the 24 netCDF files into a .mat file containing the data integrated to 30 meters and 10 s
+The script 'process_halo_netCDF' code will convert the 24 netCDF files into a .mat file containing the wind and backscatter data integrated to 30 meters and 10 s
+
+
+
+
+## Function Descriptions
+
+### ``
+Description of function here
+
+
+
+---
+
+## License
+
+This project is released under the MIT License. See LICENSE file for details
