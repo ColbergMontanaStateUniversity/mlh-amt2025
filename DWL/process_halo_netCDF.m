@@ -86,20 +86,18 @@ for i = 1:length(Path.subfolders)
     %% Save Processed Data
 
     % Move to the save directory
-    cd(Path.Save_Data)
+    cd(Path.subfolders{i})
 
     % Generate a clean filename from the subfolder name
-    temp = allSubfolderPaths{i};
-    temp = temp(8:end);  % Trim first 7 characters (adjust depending on structure)
+    tmp = Path.subfolders{i};
+    tmp = tmp(8:end);  % Trim first 7 characters (adjust depending on structure)
 
     % Save processed Halo data
-    save(temp, 'HaloData');
+    save(tmp, 'HaloData');
 
     cd(Path.home)
 
-   
-
     % Clean up variables to avoid memory issues
-    clear HaloData cmap1 temp filename
+    clear HaloData cmap1 tmp
     close(figure(1))  % Close the figure
 end
