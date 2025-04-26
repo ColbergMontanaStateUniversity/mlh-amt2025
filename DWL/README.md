@@ -39,7 +39,7 @@ This will install all required packages, including:
 
 The DWL data is available here: https://doi.org/10.26023/R75F-FGJ8-VG12
 
-Download the data. There will be 24 hourly files per day. naming convention: `Stare_122_YYYYMMDD_hh_.hpl
+Download the data. There will be 24 hourly files per day. naming convention: `Stare_122_YYYYMMDD_hh_.hpl'
 These files will be in folders labeled `pwd/YYYYMM/YYYYMMDD`. put these folders in the `DWL_Data` folder
 
 The surface weather station data is available here: https://doi.org/10.26023/30XE-MB6C-SC14
