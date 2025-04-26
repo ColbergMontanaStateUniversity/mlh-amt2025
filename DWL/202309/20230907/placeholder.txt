@@ -1,0 +1,1 @@
+This is a placeholder. Save your .hpl files here before running the 'halo_dl_decode.py' script
