@@ -56,11 +56,11 @@ clear HRRRData1 HRRRData2
 %% 4. Save output data
 
 % Create folder if it doesn't exist
-if ~exist('ProcessedHRRRData', 'dir')
-    mkdir('ProcessedHRRRData');
+if ~exist('Processed_HRRR_Data', 'dir')
+    mkdir('Processed_HRRR_Data');
 end
 
-cd('ProcessedHRRRData')
+cd('Processed_HRRR_Data')
 save(strcat(Path.date1, '.mat'), 'HRRRData');  % Save results as .mat file named after the first date
 cd(Path.home)
 
