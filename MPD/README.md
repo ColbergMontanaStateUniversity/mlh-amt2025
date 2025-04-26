@@ -9,7 +9,13 @@ No additional toolboxes are required.
 
 ### Step 1: Download the MPD Data
 
+The Denoised MPD data is found here: https://doi.org/10.26023/Z6F4-1NVX-VX09
 
+Save the data and put it in the 'MPD_Data_Denoised' folder
+
+The Unfiltered data is found here: https://doi.org/10.26023/2286-1446-JV0E
+
+Save the data and put it in the 'MPD_Data_Unfiltered' folder
 
 ### Step 2: Run the netCDF processing code
 
