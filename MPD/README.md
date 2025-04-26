@@ -28,16 +28,17 @@ The `process_MPD_data_unfiltered.m` script converts the denoised data netCDF fil
 
 The `locate_clouds_and_create_mask.m` script will locate clouds within the unfiltered MPD data and create a cloud mask.
 
-### Step 4. Run the HWT code
+### Step 4. Download and process the HRRR data
+
+Run the scripts according to the README files in the `HRRR` folder
+
+### Step 5. Run the HWT code
 
 
-
-### Step 5. Run the MPD-Aerosol code
-
+### Step 6. Run the MPD-Aerosol code
 
 
-### Step 6. Run the MPD-Thermodynamic code
-
+### Step 7. Run the MPD-Thermodynamic code
 
 
 ### File Descriptions
