@@ -50,6 +50,7 @@ put these files into the 'ISS_Data' folder
 ### Step 4. Run the python DWL decoding script
 
 make sure that 'halo_dl_decode.py' is in the same directory as the YYYYMM folders run the code.
+
 ***Note*** This code was throwing errors when ran from spyder, but had no issues when ran directly from anaconda prompt
 
 This code will convert the .hpl files into netCDF files in the same folders named: 'fp_YYYYMMDD_hhmmss.nc'
@@ -57,37 +58,46 @@ This code will convert the .hpl files into netCDF files in the same folders name
 ### Step 5. Run the MATLAB DWL processing code
 
 The script 'process_halo_netCDF.m' code will convert the 24 netCDF files into a .mat file containing the wind and backscatter data integrated to 30 meters and 10 s in local time
+
 ***Note*** The function 'concatenate_halo_data.m' contains a time correction variable unique for PDT (UTC-7)
 
 ### Step 6. Run the MATLAB surface weather station processing code
 
 The script 'process_surface_meteorology_data.m' will extract relevant variables from the ISS netCDF files and save them as a .mat file in local time
+
 ***Note*** The function 'concatenate_halo_data.m' contains a time correction variable unique for PDT (UTC-7)
 
 ### Step 7. Run the MATLAB ISFS processing code
 
 The script 'process_surface_meteorology_data.m' will extract relevant variables from the ISFS netCDF files and save them as a .mat file in local time
+
 ***Note*** The function 'concatenate_halo_data.m' contains a time correction variable unique for PDT (UTC-7)
+
 ***Note*** The function 'compute_average_flux.m' contains the gravitational constant for Tonopah, Nevada
 
 ### Step 8. Run the MATLAB mask code
 
 The script 'create_masks_halo.m' generates masks for clouds, precipitation, and missing data, and identifies cloud locations. However, the code was written as a quick fix and may not work well for other datasets.
+
 ***Note*** keep the 'betaAvg.mat' file in the same folder as the main script.
 
 ### Step 9. Run the MATLAB temporal variance extraction code
 
 The script 'compute_temporal_variance.m' performs an autocovariance extrapolation to extract the real wind variance from noisy lidar data. 
+
 ***Note*** the function 'compute_autocovariance_extrapolation.m' contains a line that sets the time window to 180 time steps, which correponds to 30 minutes for the processed DWL data.
+
 ***Caution*** This script is prone to causing MATLAB to crash, even on high-performance systems.
 
 ### Step 10. Run the MATLAB MLH code
 
 The script 'find_mlh_dwl.m' will diagnose the mlh from the vertical velocity variance data.
+
 ***Note*** SunriseSunsetTable.csv is a table of the sunrise and sunset times for Tonopah, Nevada during the M2HATS experiment. Keep it in the same directory.
 
 ### File Descriptions
 ### MATLAB Functions, Scripts, and Files
+
 'betaAvg.mat'
 Clear sky attenuated backscatter used for a reference to diagnose clouds in the DWL data.
 
