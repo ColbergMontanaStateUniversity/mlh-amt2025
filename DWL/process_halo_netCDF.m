@@ -1,6 +1,7 @@
 % This script loads Halo Doppler lidar NetCDF files, 
 % converts time to local, processes the data, saves variables as .mat files, 
-% and generates figures of vertical velocity (w_median).
+% and generates figures of vertical velocity (w_median). The data in these
+% files are in local time.
 
 clear all; close all;
 
@@ -10,7 +11,7 @@ clear all; close all;
 Path.home = pwd;
 
 % Define the main folders to look in (can expand later if needed)
-mainFolders = {'202309'};
+mainFolders = {'DWL_Data\202309'};
 
 % Initialize a cell array to store all subfolder paths
 allSubfolderPaths = {};
@@ -44,11 +45,10 @@ clear folderNames isFolder items mainDir mainFolders subfolderPath allSubfolderP
 for i = 1:length(Path.subfolders)
     
     %% Load the Halo lidar data for two consecutive days
-    [HaloData1] = load_halo_netCDF(Path, Path.subfolders(i));     % Current day
-    [HaloData2] = load_halo_netCDF(Path, Path.subfolders(i+1));   % Next day
-
-    % If either file is missing, skip to the next iteration
-    if isempty(HaloData1) || isempty(HaloData2)
+    try
+        [HaloData1] = load_halo_netCDF(Path, Path.subfolders(i));     % Current day
+        [HaloData2] = load_halo_netCDF(Path, Path.subfolders(i+1));   % Next day
+    catch
         continue
     end
 
@@ -86,11 +86,11 @@ for i = 1:length(Path.subfolders)
     %% Save Processed Data
 
     % Move to the save directory
-    cd(Path.subfolders{i})
+    cd('DWL_Data')
 
     % Generate a clean filename from the subfolder name
     tmp = Path.subfolders{i};
-    tmp = tmp(8:end);  % Trim first 7 characters (adjust depending on structure)
+    tmp = strcat(tmp(17:end),'_processed_data');  % Trim first 7 characters (adjust depending on structure)
 
     % Save processed Halo data
     save(tmp, 'HaloData');
@@ -98,6 +98,6 @@ for i = 1:length(Path.subfolders)
     cd(Path.home)
 
     % Clean up variables to avoid memory issues
-    clear HaloData cmap1 tmp
+    clear HaloData cmap1 tmp alphaData h
     close(figure(1))  % Close the figure
 end
