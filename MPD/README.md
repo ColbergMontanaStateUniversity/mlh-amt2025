@@ -19,7 +19,10 @@ Save the data and put it in the 'MPD_Data_Unfiltered' folder
 
 ### Step 2: Run the netCDF processing code
 
-
+The 'process_MPD_data_denoised.m' script converts the denoised data netCDF file to a day of data in local time.
+***Note*** the function 'concatenate_MPD_data_denoised' contains a PDT to UTC time correction.
+The 'process_MPD_data_unfiltered.m' script converts the denoised data netCDF file to a day of data in local time.
+***Note*** the function 'concatenate_MPD_data_unfiltered' contains a PDT to UTC time correction.
 
 ### Step 3. Run the cloud detection and masking code
 
