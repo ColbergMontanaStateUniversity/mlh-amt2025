@@ -36,26 +36,6 @@ To run:
 1. Open the `radiosondes/` folder in MATLAB.
 2. Run the script: diagnose_radiosonde_mlh
    
-## Function Descriptions
-
-### `diagnose_radiosonde_mlh.m`
-Main script that coordinates data loading, MLH calculation, and plotting.
-
-### `load_radiosonde_data.m`
-Loads a single radiosonde profile into a structured format from a NetCDF file.
-
-### `load_surface_data.m`
-Loads surface station data from a 3-meter tower into a structured format.
-
-### `compute_mlh_parcel_standard.m`
-Applies the standard parcel method using virtual potential temperature.
-
-### `compute_mlh_parcel_offset1K.m`
-Modified parcel method using a +1 K offset.
-
-### `compute_mlh_bulk_ri.m`
-Implements the bulk Richardson number method using a critical threshold of 0.25 to estimate MLH.
-
 ---
 
 ## Notes
