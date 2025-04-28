@@ -12,11 +12,9 @@ Each folder below contains code and a README with additional detail:
 - [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel-based MLH retrievals from radiosondes.
 - [`HRRR`](HRRR/) – HRRR-derived MLH estimates.
 
-## Getting Started
-
 Each subdirectory includes:
 - Required scripts or notebooks
-- Example input/output data (if applicable)
+- Example input/output data (or links to data repository)
 - Instructions for running the method
 
 ## Citation
