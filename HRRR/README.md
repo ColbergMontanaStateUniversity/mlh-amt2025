@@ -51,10 +51,10 @@ Each folder contains hourly NetCDF files from the HRRR model.
 
 ## Step 4. Run the matlab script to process the HRRR data
 
-**Note:** 'load_hrrr_data' has a pressure cutoff of 875 hPa (This is below the ground in Tonopah)
-**Note:** 'load_hrrr_data' has a time zone shift of UTC -7, which is spcific to PDT, local time for Tonopah, Nevada during the M^2HATS experiment
-**Note:** 'concatenate_hrrr_data' has an elevation input, which is set to the M^2HATS site
+**Note:** `load_hrrr_data` has a pressure cutoff of 875 hPa (This is below the ground in Tonopah)
+**Note:** `load_hrrr_data` has a time zone shift of UTC -7, which is spcific to PDT, local time for Tonopah, Nevada during the M^2HATS experiment
+**Note:** `concatenate_hrrr_data` has an elevation input, which is set to the M^2HATS site
 
-Run the main script 'diagnose_mlh_hrrr' and set Path.date1 to the YYYYMMDD of the desired day and Path.date2 to the next day 
+Run the main script `diagnose_mlh_hrrr` and set Path.date1 to the YYYYMMDD of the desired day and Path.date2 to the next day 
 
 ---
