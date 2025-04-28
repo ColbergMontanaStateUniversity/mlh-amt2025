@@ -46,8 +46,4 @@ The `diagnose_MLH_thermodynamic.m` script will diagnose the MLH using the virtua
 
 ***Note*** Steps 4, 5, and 6 are not necessary for step 7.
 
-### Other Files
-`SunriseSunsetTable.csv`
-Table listing sunrise and sunset times for each date, used to constrain daytime analyses.
-
 ---
