@@ -96,7 +96,3 @@ The script `find_mlh_dwl.m` will diagnose the mlh from the vertical velocity var
 ***Note*** SunriseSunsetTable.csv is a table of the sunrise and sunset times for Tonopah, Nevada during the M2HATS experiment. Keep it in the same directory.
 
 ---
-
-## License
-
-This project is released under the MIT License. See LICENSE file for details
