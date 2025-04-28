@@ -7,8 +7,7 @@ The study presents and compares multiple algorithms for estimating the mixed lay
 
 Each folder below contains code and a README with additional detail:
 
-- [`MPD-aerosol`](MPD-aerosol/) – Haar wavelet method for aerosol backscatter gradient-based MLH retrieval.
-- [`MPD-thermodynamic`](MPD-thermodynamic/) – Parcel method applied to virtual potential temperature profiles retrieved from MPD.
+- [`MPD`](MPD/) – Haar wavelet method for aerosol backscatter gradient-based MLH retrieval. Parcel method applied to virtual potential temperature profiles retrieved from MPD.
 - [`DWL`](DWL/) – Doppler wind lidar vertical velocity variance method.
 - [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel-based MLH retrievals from radiosondes.
 - [`HRRR`](HRRR/) – HRRR-derived MLH estimates.
