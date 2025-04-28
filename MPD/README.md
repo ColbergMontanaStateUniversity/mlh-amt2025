@@ -34,16 +34,17 @@ Run the scripts according to the README files in the `HRRR` folder
 
 ### Step 5. Run the HWT code
 
+The `compute_HWT.m` script will perform a Haar wavelet transformation on the MPD data
 
 ### Step 6. Run the MPD-Aerosol code
 
+The `diagnose_MLH_aerosol.m` script will diagnose the MLH using the HWT profiles.
 
 ### Step 7. Run the MPD-Thermodynamic code
 
+The `diagnose_MLH_thermodynamic.m` script will diagnose the MLH using the virtual potential temperature profiles.
 
-### File Descriptions
-### MATLAB Functions, Scripts, and Files
-
+***Note*** Steps 4, 5, and 6 are not necessary for step 7.
 
 ### Other Files
 `SunriseSunsetTable.csv`
