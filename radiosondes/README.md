@@ -43,7 +43,3 @@ To run:
 - The critical bulk Richardson number used is 0.25.
 - Only use ascending radiosondes, designated with 'asc' in filename.
 - Note that this code uses a local gravitational constant for Tonopah, Nevada, USA in `compute_mlh_bulk_ri.m`. Do not use for other datasets without changing this.
-
-## License
-
-This project is released under the MIT License. See LICENSE file for details
