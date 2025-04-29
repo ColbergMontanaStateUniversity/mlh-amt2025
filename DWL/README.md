@@ -10,8 +10,6 @@ This section of the project uses both **Python** and **MATLAB**:
 
 This project uses **Miniconda** and was developed with **Python 3.12.9**. You’ll need either [Miniconda or Anaconda](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) installed to recreate the environment.
 
-Miniconda is recommended if you prefer a lightweight installation.
-
 To set up the Python environment:
 
 ## MATLAB Setup
