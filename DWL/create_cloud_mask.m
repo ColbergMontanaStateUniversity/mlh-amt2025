@@ -13,7 +13,7 @@ function [Mask, CloudData] = create_cloud_mask(CloudData, HaloData)
 %   1) High variance in 5x5 neighborhood of attenuated backscatter
 %   2) High signal-to-noise ratio (SNR)
 %   3) High backscatter ratio compared to average molecular backscatter
-%   4) Low vertical wind variance (to filter out regions of strong turbulence)
+%   4) Low vertical wind variance (to prevent masking out regions of strong turbulence)
 
 %% Load background molecular backscatter profile
 load('betaAvg.mat');         % Load average molecular backscatter
@@ -46,7 +46,7 @@ ratio = attenuatedBackscatterSmooth ./ repmat(betaAvg, [1, length(HaloData.time)
 ratioRaw = HaloData.attenuatedBackscatter ./ repmat(betaAvg, [1, length(HaloData.time)]);
 condition3 = ratio > 20 | ratioRaw > 40;
 
-% Condition 4: Low variance in vertical wind (to avoid turbulence contamination)
+% Condition 4: Low variance in vertical wind (to avoid masking data with high vertical velocity turbulence)
 condition4 = CloudData.windVariance5x5 < 0.2 | windVariance5x5Smooth < 0.5;
 
 %% Combine all conditions into a cloud mask

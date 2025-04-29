@@ -14,7 +14,7 @@ function [Mask] = create_missing_data_mask(Mask, HaloData)
 wSmooth = smoothdata(HaloData.meanW, 2, 'movmean', 60, 'omitnan');
 
 %% 2. Sum vertical velocities in the lower part of the profile
-% Sum the first 199 range bins (close to the surface)
+% Sum the first 199 range bins
 sumWSmooth = sum(wSmooth(1:199,:), 1);
 
 %% 3. Identify time indices where the sum is NaN

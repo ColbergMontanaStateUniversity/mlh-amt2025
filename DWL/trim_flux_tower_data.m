@@ -1,11 +1,11 @@
 function [FluxData] = trim_flux_tower_data(FluxData)
 % TRIM_FLUX_TOWER_DATA trims the FluxData structure to a fixed time window
-%
+
 % Keeps only data between time = -2 hours and time = 26 hours.
-%
+
 % INPUT:
 %   FluxData - Structure containing concatenated flux tower measurements
-%
+
 % OUTPUT:
 %   FluxData - Structure with time window trimmed to -2 <= time <= 26 hours
 

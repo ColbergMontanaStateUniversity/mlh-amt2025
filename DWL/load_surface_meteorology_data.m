@@ -1,14 +1,14 @@
 function [Data] = load_surface_meteorology_data(Path, Filename)
 % LOAD_SURFACE_METEOROLOGY_DATA
 % Loads selected surface meteorology variables from a 3-meter tower NetCDF file.
-%
+
 % Inputs:
 %   - Path: Structure containing directory paths
 %   - Filename: Name of the NetCDF file to load
-%
+
 % Outputs:
 %   - Data: Structure containing selected surface meteorology variables.
-%
+
 % Notes:
 %   - Unused variables are listed but commented out for future reference.
 
@@ -44,7 +44,7 @@ function [Data] = load_surface_meteorology_data(Path, Filename)
     precipitationIntensityCS125 = ncread(Filename, "Rainr_3m");          % Rain rate (mm/hr) - CS125 sensor
     precipitationIntensityWS800 = ncread(Filename, "rainr_ws800_3m");    % Rain rate (mm/hr) - WS800 sensor
 
-    % Other meteorological fields (commented out)
+    % Other meteorological fields
     % Td_ws800_3m = ncread(Filename, "Td_ws800_3m");      % Dew point (degC)
     % Tchill_ws800_3m = ncread(Filename, "Tchill_ws800_3m"); % Wind chill (degC)
     % Precipitation_Quantity = ncread(Filename, "raina_ws800_3m"); % Total rain (mm)

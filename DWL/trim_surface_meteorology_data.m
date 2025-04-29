@@ -1,10 +1,10 @@
 function [SurfaceMeteorologyData] = trim_surface_meteorology_data(SurfaceMeteorologyData)
 % TRIM_SURFACE_METEOROLOGY_STATION
 % Trims surface meteorology data to a 28-hour window (-2 to 26 local hours).
-%
+
 % Inputs:
 %   - SurfaceMeteorologyData: Structure containing concatenated surface meteorology variables
-%
+
 % Outputs:
 %   - SurfaceMeteorologyData: Same structure, but time and all fields trimmed to the desired time window
 

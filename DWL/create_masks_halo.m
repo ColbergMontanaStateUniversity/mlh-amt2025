@@ -45,7 +45,7 @@ for i = 1:length(Directory)
     % Combine all masks into a final mask
     Mask.combinedMask = (Mask.cloudMask + Mask.precipitationMask + Mask.missingDataMask) > 0;
 
-    % Find cloud base height (CBH) using lowest detected cloud per profile
+    % Find cloud base height using lowest detected cloud per profile
     [CloudData] = find_cloud_bottom(CloudData, HaloData);
 
     % Save Halo time and range into CloudData structure

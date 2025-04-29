@@ -7,7 +7,7 @@ clear all; close all;
 Path.home         = pwd;
 Path.haloData     = strcat(pwd,'\DWL_Data');
 
-%% Create a directory listing of processed Halo DWL data files
+%% Create a directory of processed Halo DWL data files
 cd(Path.haloData)
 Directory = dir("*_processed_data.mat");
 cd(Path.home)

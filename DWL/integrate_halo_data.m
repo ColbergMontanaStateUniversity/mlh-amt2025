@@ -1,20 +1,20 @@
 function [HaloData] = integrate_halo_data(HaloData)
 % integrate_halo_data
-% ---------------------------
+
 % This function averages the Halo Doppler lidar data into 10-second intervals
 % and vertically averages the range data every 10 gates.
-%
+
 % INPUT:
 %   HaloData - structure containing time, vertical wind (windW), 
 %              attenuated backscatter, and intensity
-%
+
 % OUTPUT:
 %   HaloData - updated structure with:
 %              - time vector (10-s averaged)
 %              - mean vertical velocity (meanW)
 %              - mean attenuated backscatter
 %              - signal-to-noise ratio (SNR)
-%
+
 % NOTE: The original raw fields (windW, attenuatedBackscatter, intensity, time)
 %       are removed after processing.
 

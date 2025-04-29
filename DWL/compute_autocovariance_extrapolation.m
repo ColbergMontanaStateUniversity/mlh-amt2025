@@ -1,6 +1,6 @@
 function [TemporalVariance] = compute_autocovariance_extrapolation(HaloData, Mask)
 % This function computes the zero-lag extrapolated temporal variance
-% from Halo Doppler wind lidar (DWL) vertical velocity data.
+% from Halo DWL vertical velocity data.
 
 %% Load vertical velocity data
 r = HaloData.range(3:200);     % Range bins (limited to 3-200)
@@ -21,10 +21,10 @@ var      = NaN(length(r), length(x(1,:))); % extrapolated variance
 noiseVar = NaN(length(r), length(x(1,:))); % noise variance
 deltaVar = NaN(length(r), length(x(1,:))); % difference between real variance and noise variance
 
-xNew = NaN(size(x)); % Preallocate for despiked vertical velocity
+xNew = NaN(size(x)); % Preallocate for vertical velocity with outliers removed
 tNew = NaN(size(t)); % Preallocate for adjusted time vector
 
-%% Outlier removal and signal cleaning
+%% Outlier removal
 for i = indLow:indHigh
 
     % Extract a temporary window around the current time
@@ -45,7 +45,7 @@ for i = indLow:indHigh
         xTmp(j,ind) = NaN;
     end
     
-    % Save the despiked value at the center of the window
+    % Save the value at the center of the window
     xNew(:,i) = xTmp(:,tWin/2+1);
     tNew(i)   = tTmp(tWin/2+1);
     
@@ -108,7 +108,7 @@ for i = indLow:indHigh
     end
 end
 
-%% Package output structure
+%% create output structure
 TemporalVariance.range    = r;
 TemporalVariance.time     = t;
 TemporalVariance.variance = var;

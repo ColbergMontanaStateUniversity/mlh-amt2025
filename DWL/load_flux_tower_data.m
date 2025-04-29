@@ -2,11 +2,11 @@ function [Data] = load_flux_tower_data(Path, Filename)
 % This function loads flux tower data from a specified NetCDF file.
 % It extracts time, temperature, pressure, and water vapor measurements 
 % at different times of the day and returns them in a structure.
-%
+
 % Inputs:
 %   Path     - Structure containing folder paths
 %   Filename - Name of the NetCDF file to load
-%
+
 % Outputs:
 %   Data     - Structure containing the extracted variables
 

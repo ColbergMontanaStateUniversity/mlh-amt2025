@@ -1,14 +1,14 @@
 function [SurfaceMeteorologyData] = concatenate_surface_meteorology_data(Data1, Data2)
 % CONCATENATE_SURFACE_METEOROLOGY_STATION
 % Concatenates two consecutive days of 3-meter tower surface meteorology data.
-%
+
 % Inputs:
 %   - Data1: Structure for the first day of data
 %   - Data2: Structure for the second day of data
-%
+
 % Outputs:
 %   - SurfaceMeteorologyData: Structure containing concatenated meteorological variables
-%
+
 % Notes:
 %   - Converts time from seconds to local time (hours) with a UTC-7 shift for Pacific Daylight Time (PDT).
 %   - Data2 is assumed to follow Data1 (adds 24 hours for the second day).

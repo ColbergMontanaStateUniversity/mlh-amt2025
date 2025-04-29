@@ -1,11 +1,11 @@
 function [FluxData] = find_positive_flux(FluxData, HaloData)
 % This function identifies the longest continuous period where the buoyancy flux is positive
 % and resamples the flux variables to the HaloData time base.
-%
+
 % Inputs:
 %   FluxData - Structure containing flux-related variables
 %   HaloData - Structure containing time vector to interpolate onto
-%
+
 % Output:
 %   FluxData - Updated structure with positive flux region and interpolated fields
 
@@ -18,8 +18,8 @@ function [FluxData] = find_positive_flux(FluxData, HaloData)
 
     % Find start and end indices of each positive region
     d = diff([false; buoyancyPositive; false]); % Pad with false to capture edges
-    startIndices = find(d == 1);          % Region starts
-    endIndices = find(d == -1) - 1;       % Region ends
+    startIndices = find(d == 1);         
+    endIndices = find(d == -1) - 1;       
 
     % Compute lengths of all positive regions
     lengths = endIndices - startIndices + 1;

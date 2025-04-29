@@ -2,10 +2,10 @@ function [FluxData] = compute_average_flux(FluxData)
 % COMPUTE_AVERAGE_FLUX computes surface flux quantities from flux tower data
 % This function converts temperature, pressure, water vapor, and flux variables
 % to consistent units, computes virtual potential temperature and buoyancy flux.
-%
+
 % INPUT:
 %   FluxData - structure containing flux tower measurements
-%
+
 % OUTPUT:
 %   FluxData - updated structure with derived fields
 

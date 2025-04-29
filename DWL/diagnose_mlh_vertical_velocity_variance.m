@@ -1,6 +1,6 @@
 function [MLH] = diagnose_mlh_vertical_velocity_variance(HaloData, TemporalVariance, CloudData, Sunrise, FluxData, sw, MLHOld)
-% This function diagnoses the mixed layer height (MLH) using vertical wind velocity variance.
-%
+% This function diagnoses the mixed layer height using vertical wind velocity variance.
+
 % Inputs:
 %   HaloData          - Structure containing Halo Doppler lidar data
 %   TemporalVariance  - Structure containing vertical velocity variance estimates
@@ -9,7 +9,7 @@ function [MLH] = diagnose_mlh_vertical_velocity_variance(HaloData, TemporalVaria
 %   FluxData          - Structure containing buoyancy flux estimates
 %   sw                - Switch to choose thresholding method (0 = static, 1 = dynamic)
 %   MLHOld            - Structure containing previous MLH estimates (for dynamic thresholding)
-%
+
 % Output:
 %   MLH               - Structure containing diagnosed MLH estimates
 

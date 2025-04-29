@@ -1,6 +1,6 @@
 % This script loads Halo Doppler lidar NetCDF files, 
 % converts time to local, processes the data, saves variables as .mat files, 
-% and generates figures of vertical velocity (w_median). The data in these
+% and generates figures of vertical velocity (meanW). The data in these
 % files are in local time.
 
 clear all; close all;

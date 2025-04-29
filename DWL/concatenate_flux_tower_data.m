@@ -1,11 +1,11 @@
 function [FluxData] = concatenate_flux_tower_data(Data1, Data2)
 % CONCATENATE_FLUX_TOWER_DATA concatenates two days of flux tower data.
 % Also applies a time zone correction from UTC to PDT (UTC-7).
-%
+
 % Inputs:
 %   Data1 - Structure containing first day's flux data
 %   Data2 - Structure containing second day's flux data
-%
+
 % Output:
 %   FluxData - Combined structure with adjusted time and concatenated fields
 

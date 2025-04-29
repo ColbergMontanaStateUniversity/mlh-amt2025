@@ -1,12 +1,12 @@
 function [Sunrise] = convert_sunrise_sunset(T, HaloData, filename)
 % This function converts sunrise and sunset times from a lookup table into numerical time
 % and finds the corresponding indices in the HaloData time vector.
-%
+
 % Inputs:
 %   T         - Table containing month, day, sunrise time, and sunset time
 %   HaloData  - Structure containing the 'time' vector (in hours)
 %   filename  - Filename string containing the date (MMDD format at positions 5–8)
-%
+
 % Output:
 %   Sunrise   - Structure containing sunrise/sunset times and corresponding indices
 

@@ -64,7 +64,7 @@ while head <= size(queue,1)
             % If neighbor meets downward motion condition and is not already flagged
             if threshold(rr,cc) && ~isPrecip(rr,cc)
                 isPrecip(rr,cc) = true;
-                queue(end+1,:) = [rr,cc]; %#ok<AGROW> (small dynamic allocation penalty, acceptable here)
+                queue(end+1,:) = [rr,cc];
             end
         end
     end

@@ -1,12 +1,12 @@
 function [HaloData] = load_halo_netCDF(Path, subfolderpath)
 % load_halo_netCDF
-% ---------------------------
+
 % This function loads Halo Doppler lidar data from NetCDF files in a given subfolder.
-% 
+
 % INPUTS:
 %   Path - structure containing base paths (specifically, Path.home for returning)
 %   subfolderpath - cell array containing one path to the specific subfolder
-%
+
 % OUTPUTS:
 %   HaloData - structure containing time, vertical velocity, intensity, backscatter, and range
 %   If no files are found, returns an empty HaloData.
@@ -22,7 +22,7 @@ if ~isempty(Directory)
 
     % Read the hour vector and range vector from the first file
     hour  = h5read(Directory(1).name, "/hour"); 
-    range = h5read(Directory(1).name, "/range") / 10;  % Convert range from meters to km
+    range = h5read(Directory(1).name, "/range") / 10;  % Convert range from m to km
 
     % Set up indexing to track where each file's data starts and ends in the time series
     inc = [1, length(hour)];

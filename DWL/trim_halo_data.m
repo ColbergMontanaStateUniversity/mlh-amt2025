@@ -1,18 +1,18 @@
 function [Halo_Data] = trim_halo_data(Halo_Data)
 % trim_halo_data
-% ---------------------------
+
 % This function trims the Halo Doppler lidar dataset to a specific time window.
-%
+
 % INPUT:
 %   Halo_Data - structure containing Halo data fields:
 %               - time
 %               - meanW (vertical velocity)
 %               - attenuatedBackscatter
 %               - signalToNoiseRatio
-%
+
 % OUTPUT:
 %   Halo_Data - same structure but limited to the desired time range
-%
+
 % NOTE:
 %   - The time vector is expected to be in local time (e.g., PDT).
 %   - Data is trimmed between -2 hours and 26 hours local time to match a
