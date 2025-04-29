@@ -2,7 +2,7 @@ function [HRRRData] = convert_pressure_to_altitude(HRRRData)
 % CONVERT_PRESSURE_TO_ALTITUDE Interpolates HRRR pressure-level data to a fixed altitude grid
 
 % This function converts pressure-level variables (temperature and RH) to
-% altitude above ground level (AGL), using geopotential height minus the site elevation.
+% altitude AGL, using geopotential height minus the site elevation.
 % It interpolates all values onto a fixed vertical grid in 37.5 m steps.
 
 % INPUT:

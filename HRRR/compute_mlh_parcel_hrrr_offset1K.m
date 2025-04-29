@@ -1,18 +1,18 @@
 function [HRRRData] = compute_mlh_parcel_hrrr_offset1K(HRRRData)
-% COMPUTE_MLH_PARCEL_HRRR_OFFSET1K Estimates the mixed layer height (MLH) 
+% COMPUTE_MLH_PARCEL_HRRR_OFFSET1K Estimates the mixed layer height
 % using the parcel method with a 1-K offset.
-%
+
 % INPUT:
 %   HRRRData - structure containing:
 %       .virtualPotentialTemperature        [range x time] in K
 %       .virtualPotentialTemperatureSurface [1 x time] in K
 %       .range                              [1 x range] in m
 %       .time                               [1 x time] in hr
-%
+
 % OUTPUT:
 %   HRRRData - same structure with added field:
 %       .mlhParcelOffset1K                  [1 x time] in m
-%
+
 % METHOD:
 %   For each time step, this method finds the highest altitude at which 
 %   the virtual potential temperature is still less than the surface 

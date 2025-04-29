@@ -1,7 +1,7 @@
 function [HRRRData] = convert_q_theta_vpt(HRRRData)
 % CONVERT_Q_THETA_VPT Computes specific humidity, potential temperature,
 % and virtual potential temperature from HRRR fields
-%
+
 % INPUT:
 %   HRRRData - structure containing:
 %     .temperature               [range x time] in K
@@ -10,7 +10,7 @@ function [HRRRData] = convert_q_theta_vpt(HRRRData)
 %     .relativeHumidity2Meter    [1 x time] in %
 %     .pressure                  [range x time] in hPa
 %     .pressureHumidity2Meter    [1 x time] in Pa
-%
+
 % OUTPUT:
 %   HRRRData - updated with additional fields:
 %     .specificHumidity                [range x time] in g/kg

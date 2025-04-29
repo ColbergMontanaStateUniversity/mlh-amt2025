@@ -1,13 +1,13 @@
 function HRRRData = concatenate_hrrr_data(HRRRData1, HRRRData2)
 % CONCATENATE_HRRR_DATA Combines two HRRR data structures into one
-%
+
 % INPUTS:
 %   HRRRData1 - structure containing the first day's HRRR data
 %   HRRRData2 - structure containing the second day's HRRR data
-%
+
 % OUTPUT:
 %   HRRRData  - combined structure with time-adjusted and trimmed data
-%
+
 % Note:
 %   Time is converted from UTC to Pacific Daylight Time (UTC-7), 
 %   which was the local time zone for the M2HATS experiment.
@@ -20,7 +20,7 @@ function HRRRData = concatenate_hrrr_data(HRRRData1, HRRRData2)
 timeCorrection = -7;
 
 % ---------------------------
-% Static metadata (copied from first day)
+% Static variables (copied from first day)
 % ---------------------------
 HRRRData.presLevels = HRRRData1.presLevels;
 HRRRData.geopotentialHeight = HRRRData1.geopotentialHeight;
@@ -32,7 +32,7 @@ HRRRData.time = [HRRRData1.time + timeCorrection, ...
                  HRRRData2.time + 24 + timeCorrection];  % second day + 24 hr offset
 
 % ---------------------------
-% Concatenate 2D and 1D fields
+% Concatenate fields
 % ---------------------------
 HRRRData.temperature             = [HRRRData1.temperature,             HRRRData2.temperature];
 HRRRData.relativeHumidity        = [HRRRData1.relativeHumidity,        HRRRData2.relativeHumidity];

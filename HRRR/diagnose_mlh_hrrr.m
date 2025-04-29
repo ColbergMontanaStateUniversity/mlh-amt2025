@@ -20,8 +20,8 @@ Path.home = pwd;
 Path.hrrr_data = strcat(Path.home,'\HRRR_data'); % Folder where HRRR NetCDF files are located
 % IMPORTANT: Path.date1 should be the primary day of interest,
 % and Path.date2 must be the following day to ensure full diurnal coverage.
-Path.date1 = "20230906"; % Start date (YYYYMMDD)
-Path.date2 = "20230907";  % End date (YYYYMMDD)
+Path.date1 = "20230914"; % (YYYYMMDD)
+Path.date2 = "20230915"; % (YYYYMMDD)
 
 
 %% 1. Load HRRR data
