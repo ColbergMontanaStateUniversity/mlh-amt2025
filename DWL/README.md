@@ -27,7 +27,7 @@ Download `herbie_env_full.yml` from this repository.
 
 ```bash
 conda env create -f DWL_env_full.yml
-conda activate herbie_env
+conda activate DWL_env
 ```
 
 ### Step 3. Download the data
