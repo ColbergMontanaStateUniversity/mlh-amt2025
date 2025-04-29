@@ -1,4 +1,4 @@
-name: DWL_env_full
+name: DWL_env
 channels:
   - conda-forge
   - defaults
