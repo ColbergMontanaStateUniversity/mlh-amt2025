@@ -102,7 +102,7 @@ for i = 1:size(startPoints,1)
             end
         end
 
-        % Remove costly paths
+        % Remove high cost paths
         valid = c(:, ii+1);
         valid(valid > min(valid,[],'omitnan') + 10) = NaN;
         c(:, ii+1) = valid;
@@ -151,7 +151,7 @@ m2 = fliplr(m);
 m2(isnan(m2)) = inf;
 m2(m2<0) = inf;
 
-% Favor cloud base tracking again
+% favor tracking near cloud base height
 cloudBaseHeight2 = flipud(CloudData.cloudBaseHeight);
 valid = ~isnan(cloudBaseHeight2) & ...
         cloudBaseHeight2 > 500 & ...

@@ -1,5 +1,5 @@
 % This function loads the denoised MPD data and applies a Haar wavelet
-% covariance transformation (HWT) to the normalized aerosol backscatter coefficient.
+% covariance transformation to the normalized aerosol backscatter coefficient.
 % It saves the HWT output and generates a plot for each day.
 
 clear all; close all;
@@ -29,7 +29,7 @@ for i = 1:length(Directory)
     %% Apply the Haar Wavelet Covariance Transformation
     % Normalize the aerosol backscatter coefficient
     [HWT] = normalize_backscatter(MPDDenoised,CloudData);
-    % Apply Haar wavelet transform across multiple dilations
+    % Apply Haar wavelet transformation
     [HWT] = apply_HWT(HWT);
 
     %% Create figure of Haar Wavelet Transformation

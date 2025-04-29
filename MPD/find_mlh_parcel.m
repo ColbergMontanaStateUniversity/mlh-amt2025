@@ -4,9 +4,9 @@ function [MLH] = find_mlh_parcel(MPDDenoised,CloudData,Sunrise,offset)
 %   CloudData   - Structure containing cloud base heights and indices
 %   Sunrise     - Structure containing sunrise and sunset indices
 %   offset      - Scalar offset value (in K) added to parcel method thresholds
-%
+
 % Outputs:
-%   MLH - Structure with fields for parcel method mixed layer height (MLH)
+%   MLH - Structure with fields for parcel method mixed layer height
 %         and associated indices.
 
 %% Create time and range vectors for MLH
@@ -45,12 +45,12 @@ for i = Sunrise.sunriseInd:Sunrise.sunsetInd
         case 0 % No clouds or clouds above 6000 m
             thetaVDiff = MPDDenoised.thetaVDiff(:,i);
 
-            % Check if surface-based convection is present
+            % check if any valid points exist
             if sum(thetaVDiff(1:5) < 3) == 0
-                continue % No surface-based growth
+                continue % skip to next iteration
             else
                 try
-                    % Find top of growing layer based on offset
+                    % Find mlh based on offset
                     topind = find(thetaVDiff > 2 + offset, 1, 'first');
                     ind    = find(thetaVDiff(1:topind) < offset, 1, 'first');
                     ind2   = find(thetaVDiff(ind:min([152 topind])) < 1, 1, 'last') + 1;
@@ -71,9 +71,9 @@ for i = Sunrise.sunriseInd:Sunrise.sunsetInd
                 continue
             else
                 try
-                    % Different threshold (fixed 3 K) for cases with clouds
-                    topind = find(thetaVDiff > 3, 1, 'first');
-                    ind    = find(thetaVDiff(1:topind) < 1, 1, 'first');
+                    % Find mlh based on offset
+                    topind = find(thetaVDiff > 2 + offset, 1, 'first');
+                    ind    = find(thetaVDiff(1:topind) < offset, 1, 'first');
                     ind2   = find(thetaVDiff(ind:min([126 topind])) < 1, 1, 'last') + 1;
 
                     % Record MLH estimates

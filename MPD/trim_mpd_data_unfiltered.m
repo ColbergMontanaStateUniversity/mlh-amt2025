@@ -1,10 +1,10 @@
 function [MPD] = trim_mpd_data_unfiltered(MPD)
 % This function trims the MPD unfiltered dataset to a fixed time window.
 % It keeps data between -2 and 26 hours (local time).
-%
+
 % Input:
 %   MPD - Structure containing concatenated unfiltered MPD data
-%
+
 % Output:
 %   MPD - Trimmed structure, retaining only the relevant time window
 

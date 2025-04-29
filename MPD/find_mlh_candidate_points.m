@@ -1,11 +1,11 @@
 function [MLH] = find_mlh_candidate_points(MLH, HWT, Sunrise)
 % find_mlh_candidate_points - Identify initial candidate points for MLH retrieval based on aerosol layer density.
-%
+
 % Inputs:
 %   MLH     - Structure containing top limiter indices and aerosol layer density
 %   HWT     - Structure containing Haar wavelet transformation
 %   Sunrise - Structure containing sunrise and sunset indices
-%
+
 % Outputs:
 %   MLH.mlhCandidatePoints - Nx2 array of [range_index, time_index] for candidate MLH points
 

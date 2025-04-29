@@ -1,11 +1,11 @@
 function [MLH] = remove_points_below_clouds(MLH, HWT, CloudData)
 % remove_points_below_clouds - Removes MLH points that are invalid based on cloud base proximity
-%
+
 % Inputs:
 %   MLH       - Structure containing MLH indices and heights
 %   HWT       - Structure containing Haar wavelet transformation
 %   CloudData - Structure containing cloud base index
-%
+
 % Outputs:
 %   MLH       - Updated structure with invalid points set to NaN
 

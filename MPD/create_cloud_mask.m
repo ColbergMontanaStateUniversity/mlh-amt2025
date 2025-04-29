@@ -1,11 +1,13 @@
 function [CloudData] = create_cloud_mask(CloudData,MPDUnfiltered)
 % This function creates the cloud mask
 
-% Three conditions need to be satisified to locate a cloud:
+% Two conditions need to be satisified to locate a cloud:
 % 1) the variance of the 5x5 grid of cells surrounding the cell of interest
 % must have a variance greater than 10
 % 2) the backscatter ratio of the cell must be greater than 10
 
+% The cloud seeds are then expanded to the edge of the cloud, diagnosed as
+% the point where the edge finder is less than 10
 
 %create logical operators
 condition1 = CloudData.variance > 100;

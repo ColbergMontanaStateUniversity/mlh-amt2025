@@ -1,11 +1,11 @@
 function [MPD] = concatenate_mpd_data_unfiltered(MPD_Data1, MPD_Data2)
 % This function concatenates two days of unfiltered MPD data into a single structure.
 % It applies a UTC to PDT (UTC-7) time correction and adjusts the second day to avoid overlap.
-%
+
 % Inputs:
 %   MPD_Data1 - Structure containing the first day's MPD data
 %   MPD_Data2 - Structure containing the second day's MPD data
-%
+
 % Output:
 %   MPD       - Combined structure with corrected time and concatenated data fields
 
@@ -31,7 +31,7 @@ MPD.aerosolBackscatterCoefficient = [MPD_Data1.aerosolBackscatterCoefficient, MP
 MPD.backscatterRatio = [MPD_Data1.backscatterRatio, MPD_Data2.backscatterRatio];
 
 % ---------------------------
-% Concatenate the quality masks
+% Concatenate the masks
 % ---------------------------
 MPD.aerosolBackscatterCoefficientMask = [MPD_Data1.aerosolBackscatterCoefficientMask, MPD_Data2.aerosolBackscatterCoefficientMask];
 

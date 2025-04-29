@@ -1,5 +1,5 @@
 function [MPDUnfiltered] = load_mpd_data_unfiltered(Path,filename)
-% This function loads unfiltered MPD data from an HDF5 (.h5) file.
+% This function loads unfiltered MPD data from a netCDF file.
 % It extracts several key variables and saves them into a structure.
 %
 % Inputs:
@@ -13,7 +13,7 @@ function [MPDUnfiltered] = load_mpd_data_unfiltered(Path,filename)
 % Navigate to the folder containing the MPD data
 cd(Path.data)
 
-% Read variables from the HDF5 file
+% Read variables from the netCDF file
 MPDUnfiltered.time                                    = h5read(filename, '/time');                                 % Time vector (s since midnight UTC)
 MPDUnfiltered.range                                   = h5read(filename, '/range');                                % Range vector (m)
 MPDUnfiltered.aerosolBackscatterCoefficient           = h5read(filename, '/Aerosol_Backscatter_Coefficient');      % Aerosol backscatter coefficient (m^-1 sr^-1)

@@ -1,10 +1,9 @@
-function [MLH] = remove_single_points(MLH, HWT)
+function [MLH] = remove_single_points(MLH)
 % remove_single_points - Removes isolated MLH points and fills small gaps
-%
+
 % Inputs:
 %   MLH - Structure containing mlhIndex and mlh
-%   HWT - Structure containing Haar wavelet transformation (not used directly here)
-%
+
 % Outputs:
 %   MLH - Updated structure with cleaned mlhIndex and mlh
 

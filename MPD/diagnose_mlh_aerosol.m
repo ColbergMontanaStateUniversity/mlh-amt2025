@@ -75,7 +75,7 @@ for i = 1:length(Directory)
         [MLH] = remove_points_below_clouds(MLH, HWT, CloudData);
 
         % 5d. Remove isolated single points
-        [MLH] = remove_single_points(MLH, HWT);
+        [MLH] = remove_single_points(MLH);
     end
 
     %% Create Figures

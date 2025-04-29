@@ -1,12 +1,12 @@
 function [MLH] = set_top_limiter(MLH, HWT, Sunrise, HRRRData)
-% set_top_limiter - Set the top limiter for HWT search based on HRRR PBLH estimates.
-%
+% set_top_limiter - Set the top limiter based on HRRR PBLH estimates.
+
 % Inputs:
 %   MLH       - Structure containing MPD time vector
 %   HWT       - Structure containing Haar wavelet transformation range vector
 %   Sunrise   - Structure containing sunrise and sunset indices
 %   HRRRData  - Structure containing HRRR model times and default PBLH values
-%
+
 % Outputs:
 %   MLH.topLimiter - Vector containing the top limiter index for each time step
 
@@ -19,11 +19,11 @@ function [MLH] = set_top_limiter(MLH, HWT, Sunrise, HRRRData)
     % Loop through daytime hours between sunrise and sunset
     for j = Sunrise.sunriseInd:Sunrise.sunsetInd
 
-        % If HRRR PBLH is greater than 1000 m, use 1.5x scaling
+        % If HRRR PBLH is greater than 1000 m, muliply by 1.5
         if pblhHRRR(j) > 1000
             [~, ind2] = min(abs(1.5 * pblhHRRR(j) - HWT.rangeHaarWaveletTransformation));
         else
-            % Otherwise, add 500 m to HRRR PBLH
+            % Otherwise, add 500 m
             [~, ind2] = min(abs((pblhHRRR(j) + 500) - HWT.rangeHaarWaveletTransformation));
         end
 

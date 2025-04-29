@@ -1,10 +1,10 @@
 function [MLH] = find_all_aerosol_layers(MLH, CloudData)
 % find_all_aerosol_layers - Tracks aerosol layer structures forward and backward in time
-%
+
 % Inputs:
 %   MLH       - Structure containing Haar wavelet transformed MPD data and peak locations
 %   CloudData - Structure containing cloud base heights
-%
+
 % Outputs:
 %   MLH.aerosolLayerTrackingDensity - 2D matrix showing density of tracked aerosol layer paths
 

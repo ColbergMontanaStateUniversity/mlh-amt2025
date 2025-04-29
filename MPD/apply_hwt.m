@@ -1,5 +1,5 @@
 function [HWT] = apply_hwt(HWT)
-% This function applies the Haar Wavelet Transform (HWT) to the
+% This function applies the Haar Wavelet Transform to the
 % normalized aerosol backscatter coefficient to detect vertical
 % structures in the atmospheric profile.
 

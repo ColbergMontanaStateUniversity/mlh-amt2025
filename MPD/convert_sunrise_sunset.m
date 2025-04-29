@@ -1,11 +1,11 @@
 function [Sunrise] = convert_sunrise_sunset(T, MPDDenoised, filename)
 % convert_sunrise_sunset - Converts sunrise and sunset times to match lidar time vector
-%
+
 % Inputs:
 %   T           - Table containing month, day, sunrise time, and sunset time
 %   MPDDenoised - Structure containing the lidar time vector
 %   filename    - String representing the filename with embedded date information
-%
+
 % Outputs:
 %   Sunrise     - Structure containing time vector, sunrise and sunset times (hours),
 %                 and sunrise and sunset indices into the lidar time vector

@@ -24,7 +24,6 @@ for i = 1:length(Directory)
     %% Load Data
     cd(Path.dataMPD)
     load(Directory(i).name) % Load MPDDenoised
-    load(strcat(Directory(i).name(1:8), '_MPD_Denoised.mat')) % Redundant but kept (maybe historical reason)
     cd(Path.dataClouds)
     load(strcat(Directory(i).name(1:8), '_Cloud_Data.mat'))
     cd(Path.home)

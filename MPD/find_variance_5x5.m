@@ -29,13 +29,8 @@ V(3:end-2, 3:end-2) = localVariance(3:end-2, 3:end-2);
 V = fillmissing(V, 'nearest', 1);
 V = fillmissing(V, 'nearest', 2);
 
-% name the 
-
-
+% store the variance in the CloudData Structure
 
 CloudData.variance = V;
-
-
-
 
 end
