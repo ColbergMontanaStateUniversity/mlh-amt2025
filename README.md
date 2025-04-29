@@ -1,7 +1,7 @@
 # MLH_AMT_Paper
-Code and data processing scripts supporting the paper "Mixed Layer Height Retrievals Using MicroPulse Differential Absorption Lidar," submitted to Atmospheric Measurement Techniques. Includes retrieval algorithms for MPD-aerosol, MPD-thermodynamic, Doppler wind lidar (DWL), radiosondes, and the HRRR model.
+Code and data processing scripts supporting the paper "Mixed Layer Height Retrievals Using MicroPulse Differential Absorption Lidar," submitted to Atmospheric Measurement Techniques. Includes retrieval algorithms for MPD-aerosol, MPD-thermodynamic, DWL, radiosondes, and the HRRR model.
 
-The study presents and compares multiple algorithms for estimating the mixed layer height (MLH) from remote sensing and model data collected during the M²HATS campaign in Tonopah, Nevada.
+The study presents and compares multiple algorithms for estimating the mixed layer height from remote sensing and model data collected during the M²HATS campaign in Tonopah, Nevada.
 
 ## Repository Structure
 
@@ -9,8 +9,8 @@ Each folder below contains code and a README with additional detail:
 
 - [`MPD`](MPD/) – Haar wavelet method for aerosol backscatter gradient-based MLH retrieval. Parcel method applied to virtual potential temperature profiles retrieved from MPD.
 - [`DWL`](DWL/) – Doppler wind lidar vertical velocity variance method.
-- [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel-based MLH retrievals from radiosondes.
-- [`HRRR`](HRRR/) – HRRR-derived MLH estimates.
+- [`radiosonde`](radiosonde/) – Bulk Richardson number and parcel MLH retrievals from radiosondes.
+- [`HRRR`](HRRR/) – HRRR MLH estimates.
 
 Each subdirectory includes:
 - Required scripts or notebooks
