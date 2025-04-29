@@ -21,7 +21,7 @@ No additional toolboxes are required.
 
 ### Step 1: Download the environment file
 
-Download `herbie_env_full.yml` from this repository.
+Download `DWL_env_full.yml` from this repository.
 
 ### Step 2: Create and activate the environment
 
