@@ -30,11 +30,6 @@ conda env create -f DWL_env_full.yml
 conda activate herbie_env
 ```
 
-This will install all required packages, including:
-- `netCDF4` and `hdf5` for reading atmospheric data files
-- `numpy` for numerical operations
-- `cftime` for time handling in climate data
-
 ### Step 3. Download the data
 
 The DWL data is available here: https://doi.org/10.26023/R75F-FGJ8-VG12
