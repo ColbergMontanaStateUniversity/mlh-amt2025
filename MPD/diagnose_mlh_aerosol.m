@@ -46,9 +46,9 @@ for i = 1:length(Directory)
 
     % --- Layer Tracking Steps ---
     % 1. Find HWT peaks
-    [MLH] = find_HWT_peaks(MLH, HWT, CloudData);
+    [MLH] = find_hwt_peaks(MLH, HWT, CloudData);
 
-    % 2. Find all aerosol layers by tracking peaks
+    % 2. Find all aerosol layers using Pathfinder algorithm
     [MLH] = find_all_aerosol_layers(MLH, CloudData);
     MLH.aerosolLayerTrackingDensity(1:2,:) = NaN; % Remove near-surface noise
 
@@ -65,7 +65,7 @@ for i = 1:length(Directory)
         PBLH_Index = [];
         PBLH_Range = [];
     else
-        % 5a. Constrained tracking based on cloud data and wavelet
+        % 5a. Constrained tracking based on top limiter
         [MLH] = find_aerosol_layers_constrained(MLH, CloudData, Sunrise, HWT);
 
         % 5b. Find nearest HWT peak to each constrained layer
