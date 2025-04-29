@@ -5,7 +5,6 @@ This folder contains MATLAB code for retrieving the mixed layer height (MLH) fro
 ## Requirements
 
 - MATLAB (tested with R2024a)
-- No additional toolboxes required
   
 ## Data Download
 
