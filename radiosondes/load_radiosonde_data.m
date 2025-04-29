@@ -5,8 +5,7 @@ function [Radiosonde] = load_radiosonde_data(Path)
 
 % Reads a single radiosonde NetCDF file from the M2HATS campaign and 
 % returns its contents as a structured variable. The output structure 
-% includes vertical profiles of thermodynamic and kinematic variables, as
-% well as launch metadata.
+% includes vertical profiles of thermodynamic and kinematic variables
 
 % INPUT:
 %   Path – structure with fields:

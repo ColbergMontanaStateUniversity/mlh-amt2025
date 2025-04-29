@@ -13,8 +13,7 @@ function SurfaceData = load_surface_data(Path)
 %       .surfaceDataFilename   – name of the NetCDF file to load
 
 % OUTPUT:
-%   SurfaceData – structure containing meteorological variables and 
-%   metadata
+%   SurfaceData – structure containing meteorological variables
 
 % Navigate to the surface data directory
 cd(Path.surfaceDataFoldername)

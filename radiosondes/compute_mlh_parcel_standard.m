@@ -18,7 +18,7 @@ function [Radiosonde] = compute_mlh_parcel_standard(Radiosonde,SurfaceData)
 
 %% Compute the reference virtual potential temperature (thetaVRef)
 
-% Interpolate surface air temperature to the radiosonde launch time [°C → K]
+% Interpolate surface air temperature to the radiosonde launch time [K]
 tRef = interp1(SurfaceData.time/3600, SurfaceData.airTemp, Radiosonde.launchTimeUtc) + 273.15;  % Reference temperature [K]
 
 % Interpolate surface relative humidity to the radiosonde launch time [%]
@@ -27,7 +27,7 @@ rhRef = interp1(SurfaceData.time/3600, SurfaceData.rh, Radiosonde.launchTimeUtc)
 % Interpolate surface pressure to the radiosonde launch time [hPa]
 pRef = interp1(SurfaceData.time/3600, SurfaceData.pressure, Radiosonde.launchTimeUtc);  % Reference pressure [hPa]
 
-% Compute potential temperature using Poisson's equation [K]
+% Compute potential temperature [K]
 thetaRef = tRef .* (1000 ./ pRef) .^ (287 / 1004);  % Dry potential temperature [K]
 
 % Compute saturation vapor pressure using Tetens equation [hPa]
@@ -45,7 +45,6 @@ eRef = (rhRef ./ 100) .* esRef;
 mixingRatio = 0.622 * eRef / (pRef - eRef);
 
 % Compute virtual potential temperature [K]
-% Includes correction for lower density of moist air: thetaV = theta * (1 + 0.61 * (e / (p - e)))
 thetaVRef = thetaRef .* (1 + 0.61 * mixingRatio);  % Virtual potential temperature [K]
 
 
@@ -67,7 +66,7 @@ log = (deltaThetaV > 0);
 ind = [];
 
 % Search for the first index where thetaV exceeds the reference value,
-% and the next 5 consecutive points also do — avoids spikes or shallow anomalies
+% and the next 5 consecutive points also do
 while isempty(ind)
     ind = find(log == 1, 1, 'first');
     if sum(log(ind+1 : ind+5)) < 5

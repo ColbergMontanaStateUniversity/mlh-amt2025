@@ -1,12 +1,7 @@
 function [Radiosonde] = compute_mlh_bulk_ri(Radiosonde,SurfaceData)
 % Estimate PBL height using the Bulk Richardson Number method.
 
-% This implementation follows the approach described by:
-% - Vogelezang and Holtslag (1996)
-% - Seibert et al. (2000)
-% - Seidel et al. (2010)
-
-% A critical Bulk Richardson number (BRN) threshold of **0.25** is used
+% A critical Bulk Richardson number threshold of 0.25 is used
 % to define the top of the mixed layer, consistent with these references.
 
 %% Compute the reference virtual potential temperature (thetaVRef)
@@ -18,7 +13,7 @@ tRef = interp1(SurfaceData.time / 3600, SurfaceData.airTemp, Radiosonde.launchTi
 rhRef = interp1(SurfaceData.time / 3600, SurfaceData.rh, Radiosonde.launchTimeUtc);
 pRef  = interp1(SurfaceData.time / 3600, SurfaceData.pressure, Radiosonde.launchTimeUtc);
 
-% Compute dry potential temperature using Poisson's equation [K]
+% Compute potential temperature using Poisson's equation [K]
 thetaRef = tRef .* (1000 ./ pRef) .^ (287 / 1004);
 
 % Compute saturation vapor pressure using Tetens equation [hPa]
@@ -29,7 +24,7 @@ else
     esRef  = 6.1078*exp((21.875*(tRef_C))  ./((tRef_C)  + 265.5));
 end
 
-% Compute actual vapor pressure using RH [hPa]
+% Compute actual vapor pressure [hPa]
 eRef = (rhRef ./ 100) .* esRef;
 
 % Compute water vapor mixing ratio [kg/kg dry air]
@@ -44,10 +39,9 @@ thetaVRef = thetaRef .* (1 + 0.61 * mixingRatio);
 windSpeedRef = interp1(SurfaceData.time / 3600, SurfaceData.windAvg, Radiosonde.launchTimeUtc);     % [m/s]
 windDirRef   = interp1(SurfaceData.time / 3600, SurfaceData.windDirAct, Radiosonde.launchTimeUtc);  % [deg]
 
-% Convert wind direction (meteorological) to Cartesian components [m/s]
-% Negative signs used for u/v conversion assuming wind is reported "from" direction
-uRef = -windSpeedRef * sin(windDirRef);  % Zonal wind [m/s]
-vRef = -windSpeedRef * cos(windDirRef);  % Meridional wind [m/s]
+% Convert wind direction to Cartesian components [m/s]
+uRef = -windSpeedRef * sin(windDirRef);
+vRef = -windSpeedRef * cos(windDirRef);
 
 %% Calculate the Bulk Richardson Number profile
 
@@ -55,7 +49,7 @@ vRef = -windSpeedRef * cos(windDirRef);  % Meridional wind [m/s]
 g = 9.791;
 
 % Compute the BRN at each level using:
-% Ri = (g / thetaV0) * (thetaV(z) - thetaV0) * z / [(u(z) - u0)² + (v(z) - v0)²]
+% Ri = (g / thetaV0) * (thetaV(z) - thetaV0) * z / [(u(z) - u0)^2 + (v(z) - v0)^2]
 Radiosonde.bulkRichardsonNumber = ...
     ((g ./ thetaVRef) .* (Radiosonde.thetaV - thetaVRef) .* Radiosonde.height) ./ ...
     ((Radiosonde.windU - uRef).^2 + (Radiosonde.windV - vRef).^2);
@@ -71,7 +65,7 @@ bulkRichardsonNumber(1:h_ind_1) = NaN;
 ind = [];
 log = (bulkRichardsonNumber > 0.25);
 
-% Apply smoothing: require BRN > 0.25 for at least 5 consecutive levels
+% require BRN > 0.25 for at least 5 consecutive levels
 while isempty(ind)
     ind = find(log == 1, 1, 'first');
     if sum(log(ind+1 : ind+5)) < 5
