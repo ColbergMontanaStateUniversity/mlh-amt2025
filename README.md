@@ -22,7 +22,7 @@ Each subdirectory includes:
 If you use this code, please cite:
 
 Colberg, L., Repasky, K. S., Spuler, S. M., Hayman, M., & Stillwell, R. A. (2025). Mixed Layer Height Retrievals Using MicroPulse Differential Absorption Lidar. Manuscript submitted to Atmospheric Measurement Techniques.
-[DOI or preprint link here]
+[10.5194/egusphere-2025-1989]
 
 ## Contact
 
