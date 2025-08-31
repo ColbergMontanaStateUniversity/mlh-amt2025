@@ -31,7 +31,7 @@ eRef = (rhRef ./ 100) .* esRef;
 mixingRatio = 0.622 * eRef / (pRef - eRef);
 
 % Compute surface virtual potential temperature [K]
-thetaVRef = thetaRef .* (1 + 0.61 * mixingRatio);
+thetaVRef = thetaRef .* (1 + 0.61 * mixingRatio./(1 + mixingRatio));
 
 %% Compute the reference horizontal wind components
 
@@ -81,4 +81,5 @@ Radiosonde.mlhBulkRichardsonMethod = Radiosonde.height(ind);
 Radiosonde.mlhBulkRichardsonMethodTime = Radiosonde.launchTimeUtc + ...
                                          Radiosonde.time(ind) / 3600;
  
+
 end
