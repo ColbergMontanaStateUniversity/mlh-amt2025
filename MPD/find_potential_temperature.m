@@ -19,11 +19,11 @@ thetaSurface = MPDDenoised.surfaceTemperature .* (1 ./ MPDDenoised.surfacePressu
 % ---------------------------
 % Convert absolute humidity (g/m^3) to specific humidity (kg/kg)
 % ---------------------------
-density = (MPDDenoised.pressureEstimate * 101325) ./ (287 * MPDDenoised.temperature);
-densitySurface = (MPDDenoised.surfacePressure * 101325) ./ (287 * MPDDenoised.surfaceTemperature);
+vaporPressure        = MPDDenoised.absoluteHumidity       .*.4615.*MPDDenoised.temperature;
+vaporPressureSurface = MPDDenoised.surfaceAbsoluteHumidity.*.4615.*MPDDenoised.surfaceTemperature;
 
-q = (MPDDenoised.absoluteHumidity / 1000) ./ density;
-qSurface = (MPDDenoised.surfaceAbsoluteHumidity / 1000) ./ densitySurface;
+q        = 0.622*vaporPressure       ./(MPDDenoised.pressureEstimate*101325-(1-0.622).*vaporPressure);
+qSurface = 0.622*vaporPressureSurface./(MPDDenoised.surfacePressure *101325-(1-0.622).*vaporPressureSurface);
 
 % ---------------------------
 % Compute virtual potential temperature
@@ -46,5 +46,6 @@ MPDDenoised.thetaV = thetaV;
 MPDDenoised.thetaVSurface = thetaVSurface;
 MPDDenoised.thetaDiff = thetaDifference;
 MPDDenoised.thetaVDiff = thetaVDifference;
+
 
 end
