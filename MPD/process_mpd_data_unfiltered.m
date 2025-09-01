@@ -16,12 +16,12 @@ cd(Path.home)
 for i = 1:length(Directory) - 1
 
     %% Load two consecutive days of MPD data
-    [MPDUnfilteredData1] = load_MPD_data_unfiltered(Path, Directory(i).name);
-    [MPDUnfilteredData2] = load_MPD_data_unfiltered(Path, Directory(i+1).name);
+    [MPDUnfilteredData1] = load_mpd_data_unfiltered(Path, Directory(i).name);
+    [MPDUnfilteredData2] = load_mpd_data_unfiltered(Path, Directory(i+1).name);
 
     % Concatenate and trim the two days into a single structure
-    [MPDUnfiltered] = concatenate_MPD_data_unfiltered(MPDUnfilteredData1, MPDUnfilteredData2);
-    [MPDUnfiltered] = trim_MPD_data_unfiltered(MPDUnfiltered);
+    [MPDUnfiltered] = concatenate_mpd_data_unfiltered(MPDUnfilteredData1, MPDUnfilteredData2);
+    [MPDUnfiltered] = trim_mpd_data_unfiltered(MPDUnfiltered);
 
     clear MPDUnfilteredData1 MPDUnfilteredData2
 
@@ -33,5 +33,6 @@ for i = 1:length(Directory) - 1
 
     %% Clear structures and variables for the next loop iteration
     clear MPDUnfiltered filename
+
 
 end
