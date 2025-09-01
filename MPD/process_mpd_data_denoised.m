@@ -18,12 +18,12 @@ cd(Path.home)
 for i = 1:length(Directory)-1
 
     %% Load two consecutive days of MPD data
-    [MPDDenoised1] = load_MPD_data_denoised(Path, Directory(i).name);
-    [MPDDenoised2] = load_MPD_data_denoised(Path, Directory(i+1).name);
+    [MPDDenoised1] = load_mpd_data_denoised(Path, Directory(i).name);
+    [MPDDenoised2] = load_mpd_data_denoised(Path, Directory(i+1).name);
 
     % Concatenate two days and trim to 0–24 hr window
-    [MPDDenoised] = concatenate_MPD_data_denoised(MPDDenoised1, MPDDenoised2);
-    [MPDDenoised] = trim_MPD_data_denoised(MPDDenoised);
+    [MPDDenoised] = concatenate_mpd_data_denoised(MPDDenoised1, MPDDenoised2);
+    [MPDDenoised] = trim_mpd_data_denoised(MPDDenoised);
     clear MPDDenoised1 MPDDenoised2
 
     %% Calculate potential temperature and virtual potential temperature
@@ -96,4 +96,5 @@ for i = 1:length(Directory)-1
     close(figure(2))
 
     disp(i)   % Display iteration number
+
 end
